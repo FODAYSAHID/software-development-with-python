@@ -36,21 +36,21 @@ class FodaySoftware:
         self.master.title("CONTACT SAVER")
         self.master.geometry("400x420")
         self.master.resizable(0,0)
-        self.master.iconbitmap("MY_PIC.ico")
+        self.master.iconbitmap("../MY_PIC.ico")
 
-        self.addIcon = ImageTk.PhotoImage(Image.open('icons/add.jpg'))
-        self.ExitIcon = ImageTk.PhotoImage(Image.open('icons/exit.jpg'))
-        self.SaveIcon = ImageTk.PhotoImage(Image.open('icons/save.jpg'))
-        self.addIcon = ImageTk.PhotoImage(Image.open('icons/add.jpg'))
-        self.viewIcon = ImageTk.PhotoImage(Image.open('icons/view.jpg'))
-        self.homeIcon = ImageTk.PhotoImage(Image.open('icons/home.jpg'))
-        self.searchIcon = ImageTk.PhotoImage(Image.open('icons/search.jpg'))
-        self.emailIcon = ImageTk.PhotoImage(Image.open('icons/email.jpg'))
-        self.backupIcon = ImageTk.PhotoImage(Image.open('icons/backup.jpg'))
+        self.addIcon = ImageTk.PhotoImage(Image.open('../icons/add.jpg'))
+        self.ExitIcon = ImageTk.PhotoImage(Image.open('../icons/exit.jpg'))
+        self.SaveIcon = ImageTk.PhotoImage(Image.open('../icons/save.jpg'))
+        self.addIcon = ImageTk.PhotoImage(Image.open('../icons/add.jpg'))
+        self.viewIcon = ImageTk.PhotoImage(Image.open('../icons/view.jpg'))
+        self.homeIcon = ImageTk.PhotoImage(Image.open('../icons/home.jpg'))
+        self.searchIcon = ImageTk.PhotoImage(Image.open('../icons/search.jpg'))
+        self.emailIcon = ImageTk.PhotoImage(Image.open('../icons/email.jpg'))
+        self.backupIcon = ImageTk.PhotoImage(Image.open('../icons/backup.jpg'))
         self.developerIcon = ImageTk.PhotoImage(Image.open('icons/developer.jpg'))
-        self.bgPic = ImageTk.PhotoImage(Image.open('pic.jpg'))
-        self.sendIcon = ImageTk.PhotoImage(Image.open('icons/send.jpg'))
-        self.developerImg = ImageTk.PhotoImage(Image.open('DeveloperPic.jpg'))
+        self.bgPic = ImageTk.PhotoImage(Image.open('../pic.jpg'))
+        self.sendIcon = ImageTk.PhotoImage(Image.open('../icons/send.jpg'))
+        self.developerImg = ImageTk.PhotoImage(Image.open('../DeveloperPic.jpg'))
 
         self.lbl = Label(self.master, image = self.bgPic,width = 400,height = 420)
         self.lbl.place(x = 0, y = 30)
@@ -346,7 +346,7 @@ class FodaySoftware:
             messagebox.showerror(title = "ERROR", message = "MISSING FORM VALUE(S)")
         else:
             try:
-                self.conn = sqlite3.connect("FODAY SAHID.db")
+                self.conn = sqlite3.connect("../database/contact_saver_software.db")
                 self.c = self.conn.cursor()
             except Exception as e:
                 speak.Speak("ERROR")
@@ -365,7 +365,7 @@ class FodaySoftware:
         for data in self.rec:
             self.tree.delete(data)
         try:
-            self.conn = sqlite3.connect("FODAY SAHID.db")
+            self.conn = sqlite3.connect("../database/contact_saver_software.db")
             self.c = self.conn.cursor()
         except Exception as e:
             speak.Speak("ERROR")
@@ -378,7 +378,7 @@ class FodaySoftware:
 
     def backupContacts(self, e):
         try:
-            self.conn = sqlite3.connect("FODAY SAHID.db")
+            self.conn = sqlite3.connect("../database/contact_saver_software.db")
             self.c = self.conn.cursor()
         except Exception as e:
             speak.Speak("ERROR")
@@ -400,7 +400,7 @@ class FodaySoftware:
 
     def searchContacts(self):
         try:
-            self.conn = sqlite3.connect("FODAY SAHID.db")
+            self.conn = sqlite3.connect("../database/contact_saver_software.db")
             self.c = self.conn.cursor()
         except Exception as e:
             speak.Speak("ERROR")

@@ -1,7 +1,7 @@
 import sqlite3
 
 try:
-    conn = sqlite3.connect("FODAY SAHID.db")
+    conn = sqlite3.connect("contact_saver_software.db")
     c = conn.cursor()
 except Exception as e:
     print(str(e))
